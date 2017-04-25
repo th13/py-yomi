@@ -1,0 +1,23 @@
+version: "3"
+services:
+  jp-parser:
+    build: ./jp_parser
+    container_name: jp_parser
+    volumes:
+      - ./jp_parser/src:/code
+    depends_on: 
+      - rabbit-server
+    tty: true
+  web_app:
+    build: ./web_app
+    container_name: yomi_web
+    volumes:
+      - ./web_app/lib:/code/lib
+    depends_on:
+      - rabbit-server
+    tty: true
+  rabbit-server:
+    image: rabbitmq:3
+    container_name: rabbit-server
+    hostname: rabbit
+    restart: always
