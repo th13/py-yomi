@@ -19,7 +19,7 @@ class ParserServer
     @exchange = @channel.default_exchange
 
     @queue.subscribe(block: true) do |delivery_info, properties, body|
-      text = body.force_encoding('utf-8')
+      text = body.force_encoding("ASCII-8BIT").force_encoding("utf-8")
       words = parse_jp(text).to_json      
       @exchange.publish(words,
                         routing_key: properties.reply_to,
