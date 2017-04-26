@@ -1,6 +1,6 @@
 version: "3"
 services:
-  jp-parser:
+  jp_parser:
     build: ./jp_parser
     container_name: jp_parser
     volumes:
@@ -12,7 +12,9 @@ services:
     build: ./web_app
     container_name: yomi_web
     volumes:
-      - ./web_app/lib:/code/lib
+      - ./web_app:/code
+    ports:
+      - "5000:5000"
     depends_on:
       - rabbit-server
     tty: true
