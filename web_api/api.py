@@ -1,9 +1,19 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from lib.parse_jpn_rpc import ParseJapaneseRpc
+
+from datetime import timedelta
+from flask import make_response, request, current_app
+from functools import update_wrapper
 
 parse_jpn_rpc = ParseJapaneseRpc()
 
 api = Flask(__name__.split('.')[0])
+cors = CORS(api, resources={
+    r"/api/*": {
+        "origins": "*"
+    }
+})
 
 @api.route("/api/v1/parse")
 def get_parsed_sentence():

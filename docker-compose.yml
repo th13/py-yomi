@@ -8,15 +8,25 @@ services:
     depends_on: 
       - rabbit-server
     tty: true
-  web_app:
-    build: ./web_app
-    container_name: yomi_web
+  web_api:
+    build: ./web_api
+    container_name: yomi_api
     volumes:
-      - ./web_app:/code
+      - ./web_api:/code
     ports:
       - "5000:5000"
     depends_on:
       - rabbit-server
+    tty: true
+  web_client:
+    build: ./web_client
+    container_name: yomi_web_client
+    volumes:
+      - ./web_client:/code
+    ports:
+      - "8080:8080"
+    depends_on:
+      - web_api
     tty: true
   rabbit-server:
     image: rabbitmq:3

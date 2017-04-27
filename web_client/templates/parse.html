@@ -2,10 +2,42 @@
 <html>
 <head>
     <title>Parse Test</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/parse.js"></script>
 </head>
 <body>
-    <div></div>
+    
+    <div class="menu">
+        <div class="menu-button">三</div>
+        <div class="menu-items">
+            <a href="#" data-en="Login" data-jp="ログイン">
+                <span>Login</span>
+            </a>
+            <a href="#" data-en="Register" data-jp="アカウント登録">
+                <span>Register</span>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="hv-center">
+            <span class="caligraphy-title">読み</span>
+            <span class="eng-title">yomi</span>
+            <div class="input-section">
+                <div class="enter-box">
+                    <img id="red-box" src="img/box.png">
+                    <span class="red caligraphy enter-box-text">入力</span>
+                </div>
+                <input type="text" class="clear">
+                <img id="input-stroke" src="img/stroke.png">
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2017 トレバー・ヘルムズ
+        </div>
+    </div>
 </body>
 </html>

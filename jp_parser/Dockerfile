@@ -28,3 +28,5 @@ RUN rm -rf /setup
 ADD ./src /code
 WORKDIR /code
 RUN bundle install
+
+# CMD ["ruby", "rpc.rb"]
