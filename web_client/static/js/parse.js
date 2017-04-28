@@ -1,9 +1,9 @@
 $(() => {
-    $(".menu-button").hover(() => {
+    $("#san-menu").hover(() => {
         $(".menu-items").fadeIn(400);
     });
 
-    $(".menu").hover(null, () => {
+    $(".menu-items").hover(null, () => {
         $(".menu-items").fadeOut(400);
     });
 
@@ -34,7 +34,7 @@ $(() => {
     });
 
     var set = false;
-    $("input.clear").on("input", function() {
+    $("#search").on("input", function() {
         console.log($(this).val());
         if ($(this).val() != "") {
             if (!set) {
@@ -50,5 +50,28 @@ $(() => {
                 }
             }, 200);
         }
+    });
+
+    $("#login > span").click(function(e) {
+        e.preventDefault();
+        $("#main-section").fadeOut(1000, function() {
+            $("#login-section").fadeIn(1000);
+        });
+        $("#san-menu").fadeOut(1000, function() {
+            $("#back-menu").fadeIn(1000);
+        });
+        $(".menu-items").fadeOut(1000, function() {
+            $(this).css("display", "none");
+        });
+
+    });
+
+    $("#back-menu").click(function() {
+        $("#login-section").fadeOut(1000, function() {
+            $("#main-section").fadeIn(1000);
+        });
+        $("#back-menu").fadeOut(1000, function() {
+            $("#san-menu").fadeIn(1000);
+        });
     });
 });

@@ -50,6 +50,13 @@ html, body {
     margin: 0.75rem;
 }
 
+.caligraphy-login {
+    font-size: 6rem;
+    font-family: "Kouzan Gyousho";
+    color: #030303;
+    margin: 0.75rem;
+}
+
 
 .eng-title {
     font-size: 2.8rem;
@@ -59,17 +66,35 @@ html, body {
     color: #404040;
 }
 
+.eng-login {
+    font-size: 1.6rem;
+    font-family: "Bebas Neue";
+    font-weight: 400;
+    letter-spacing: 1.6rem;
+    color: #404040;
+    margin-bottom: 3rem;
+}
+
 .input-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 8rem;
+    margin-top: 6rem;
 }
 
-img#input-stroke {
+#login-section .input-section {
+    margin-top: 2rem;
+}
+
+img.input-stroke {
     max-width: 100%;
     height: 0.5rem;
+}
+
+#login-section img.input-stroke {
+    max-width: 70%;
+    height: 0.3rem;
 }
 
 input.clear {
@@ -80,6 +105,15 @@ input.clear {
     width: 40rem;
     text-align: left;
     font-size: 2rem;
+    font-family: "Togoshi";
+    background: transparent;
+}
+
+#login-section input.clear {
+    margin: 1rem 0 0.25rem 0;
+    border: 0;
+    text-align: center;
+    font-size: 1.6rem;
     font-family: "Togoshi";
     background: transparent;
 }
@@ -192,6 +226,19 @@ img#red-box {
     width: -10%;
     margin-left: 1rem !important;
     margin-right: 0.53rem !important; 
+}
+
+.back-button {
+    font-family: "Togoshi";
+    font-size: 2rem;
+    letter-spacing: -1rem;
+    color: #404040;
+    margin-top: 0rem;
+    padding: 0.3rem;
+}
+
+.back-button:hover {
+    color: #030303;
 }
 
 .up {

@@ -11,18 +11,21 @@
 <body>
     
     <div class="menu">
-        <div class="menu-button">三</div>
+        <div id="san-menu" class="menu-button">三</div>
+        <div id="back-menu" class="menu-button back-button" style="display: none;">
+            くくく
+        </div>
         <div class="menu-items">
-            <a href="#" data-en="Login" data-jp="ログイン">
+            <a id="login" href="#" data-en="Login" data-jp="ログイン">
                 <span>Login</span>
             </a>
-            <a href="#" data-en="Register" data-jp="アカウント登録">
+            <a id="register" href="#" data-en="Register" data-jp="アカウント登録">
                 <span>Register</span>
             </a>
         </div>
     </div>
     <div class="container">
-        <div class="hv-center">
+        <div id="main-section" class="hv-center">
             <span class="caligraphy-title">読み</span>
             <span class="eng-title">yomi</span>
             <div class="input-section">
@@ -30,8 +33,20 @@
                     <img id="red-box" src="img/box.png">
                     <span class="red caligraphy enter-box-text">入力</span>
                 </div>
-                <input type="text" class="clear">
-                <img id="input-stroke" src="img/stroke.png">
+                <input id="search" type="text" class="clear">
+                <img class="input-stroke" src="img/stroke.png">
+            </div>
+        </div>
+        <div id="login-section" class="hv-center" style="display: none;">
+            <span class="caligraphy-login">ログイン</span>
+            <span class="eng-login">login</span>
+            <div class="input-section">
+                <input type="text" class="clear" placeholder="username">
+                <img class="input-stroke" src="img/stroke.png">
+            </div>
+            <div class="input-section">
+                <input type="password" class="clear" placeholder="password">
+                <img class="input-stroke" src="img/stroke.png">
             </div>
         </div>
 
